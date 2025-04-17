@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  font-family: "Inter Variable", sans-serif;
+}
+
+@theme {
+  --color-light-background: #f8faff;
+  --color-light-text: #1f2937;
+  --color-primary: #1d4ed8;
+}
