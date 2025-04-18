@@ -1,0 +1,62 @@
+---
+import CategoryCard from "./CategoryCard.astro";
+
+const categories = [
+  {
+    category: "Matematicas Basicas",
+    description:
+      "Aprende los conceptos básicos de matemáticas para resolver problemas cotidianos.",
+    icon: "math",
+  },
+  {
+    category: "Calculo y Fisica",
+    description:
+      "Explora los fundamentos del cálculo y la física para entender el mundo que nos rodea.",
+    icon: "calculus",
+  },
+  {
+    category: "Electrónica e IoT",
+    description:
+      "Descubre el fascinante mundo de la electrónica y el Internet de las Cosas.",
+    icon: "electronic",
+  },
+  {
+    category: "Programación",
+    description:
+      "Aprende a programar desde cero y desarrolla tus propias aplicaciones.",
+    icon: "programming",
+  },
+  {
+    category: "Desarrollo Web",
+    description:
+      "Crea sitios web modernos y atractivos con las últimas tecnologías.",
+    icon: "web-development",
+  },
+  {
+    category: "Inteligencia Artificial y Ciencia de Datos",
+    description:
+      "Adéntrate en el mundo de la IA y aprende a construir modelos inteligentes.",
+    icon: "ai",
+  },
+];
+---
+
+<h2 class="text-4xl font-extrabold dark:text-white text-center tracking-tight">
+  Categorias destacadas
+</h2>
+<p class="my-4 text-lg text-gray-500 text-center">
+  Explora nuestras áreas de conocimiento y encuentra el tema que más te interese
+</p>
+<div
+  class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 lg:px-32 mt-8 lg:mt-12"
+>
+  {
+    categories.map((category) => (
+      <CategoryCard
+        category={category.category}
+        description={category.description}
+        icon={category.icon}
+      />
+    ))
+  }
+</div>
