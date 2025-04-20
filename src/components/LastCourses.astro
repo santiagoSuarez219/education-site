@@ -1,0 +1,53 @@
+---
+import CourseCard from "./CourseCard.astro";
+
+const lastCourses = [
+  {
+    name: "Curso de Trigonometría",
+    category: "Matemáticas Básicas",
+    description:
+      "Aprende los conceptos básicos de la trigonometría y cómo aplicarlos en problemas reales.",
+  },
+  {
+    name: "Curso de Programacíon Basica con Python",
+    category: "Programación",
+    description:
+      "Aprende los conceptos básicos de la programación y cómo aplicarlos en problemas reales.",
+  },
+  {
+    name: "Curso de Astro",
+    category: "Desarrollo Web",
+    description:
+      "Aprende a crear aplicaciones web modernas utilizando Astro y sus características avanzadas.",
+  },
+];
+---
+
+<h2
+  class="text-4xl font-extrabold dark:text-white text-gray-900 text-center tracking-tight mt-8 lg:mt-48"
+>
+  Últimos cursos
+</h2>
+<p class="my-4 text-lg text-gray-500 text-center">
+  Descubre nuestros cursos más recientes y mantente actualizado
+</p>
+<div
+  class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 lg:px-32 mt-8 lg:mt-12"
+>
+  {
+    lastCourses.map((course) => (
+      <CourseCard
+        name={course.name}
+        category={course.category}
+        description={course.description}
+      />
+    ))
+  }
+</div>
+<div class="flex justify-center mt-8">
+  <button
+    type="button"
+    class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 cursor-pointer transition-all duration-300 ease-in-out"
+    >Ver todos los cursos</button
+  >
+</div>

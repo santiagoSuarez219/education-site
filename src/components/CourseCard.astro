@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+
+import CourseImage from "../assets/images/course-image.png";
+import CourseImageLight from "../assets/images/course-image-light.png";
+
+const { name, category, description } = Astro.props;
+---
+
+<div
+  class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 hover:shadow-lg dark:hover:shadow-blue-900 transition-shadow duration-300 ease-in-out relative flex flex-col justify-between"
+>
+  <span
+    class="absolute top-2 right-2 text-sm py-1 px-2 rounded-lg bg-blue-600 text-white font-semibold"
+    >Nuevo</span
+  >
+  <a href="#">
+    <Image
+      src={CourseImage}
+      alt="course-image"
+      class="rounded-t-lg hidden dark:block"
+    />
+    <Image
+      src={CourseImageLight}
+      alt="course-image-light"
+      class="rounded-t-lg dark:hidden"
+    />
+  </a>
+  <div class="p-5">
+    <a href="#">
+      <h5
+        class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
+        {name}
+      </h5>
+    </a>
+    <p class="mb-6 font-normal text-gray-700 dark:text-gray-400">
+      {category}
+    </p>
+    <p class="mb-6 font-normal text-gray-700 dark:text-gray-400">
+      {description}
+    </p>
+  </div>
+  <div
+    class="flex items-center justify-between text-gray-700 dark:text-gray-400 px-5 pb-5"
+  >
+    <p>12 lecciones</p>
+    <a
+      href=""
+      class="py-2 px-3 font-medium rounded-lg dark:bg-blue-600 dark:text-white hover:bg-blue-700 border border-blue-600 text-blue-600 hover:text-white transition-all duration-300 ease-in-out"
+      >Ver Curso</a
+    >
+  </div>
+</div>
