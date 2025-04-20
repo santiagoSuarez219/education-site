@@ -1,5 +1,8 @@
 ---
 import "@fontsource-variable/inter";
+
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 ---
 
@@ -12,17 +15,34 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>ProfeSanti</title>
   </head>
-  <body>
+  <body class="h-screen">
     <div
-      class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] bg-white dark:bg-transparent bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"
+      class="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] bg-white dark:bg-transparent bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"
     >
       <div
         class="dark:hidden absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#C9EBFF,transparent)]"
       >
       </div>
     </div>
-    <main class="w-full h-screen overflow-y-auto">
-      <slot />
-    </main>
+    <Navbar />
+    <slot />
+    <Footer />
   </body>
 </html>
+
+<style>
+  :root {
+    color-scheme: light dark;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    overscroll-behavior: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+</style>
