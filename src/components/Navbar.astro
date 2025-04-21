@@ -10,21 +10,24 @@ const routes = [
 ];
 ---
 
-<nav id="navbar" class="fixed top-0 start-0 z-20 w-full bg-transparent">
+<nav
+  id="navbar"
+  class="fixed top-0 start-0 z-20 w-full bg-gray-900 md:bg-transparent"
+>
   <div
-    class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-4"
+    class="max-w-screen-xl mx-auto flex lg:flex-wrap items-center lg:justify-between p-4"
   >
     <!-- Logo -->
     <a
       href="#"
-      class="flex items-center space-x-3 rtl:space-x-reverse text-gray-900 dark:text-white"
+      class="flex items-center space-x-1 lg:space-x-3 rtl:space-x-reverse text-gray-900 dark:text-white flex-1 lg:flex-none"
     >
       <Icon
         name="rocket"
-        class="size-6 lg:size-8 text-blue-700 dark:text-blue-400"
+        class="hidden md:block size-6 lg:size-8 text-blue-700 dark:text-blue-400"
       />
       <span
-        class="text-xl lg:text-2xl font-bold tracking-tight whitespace-nowrap bg-clip-text"
+        class="text-2xl lg:text-2xl font-bold tracking-tight whitespace-nowrap bg-clip-text"
       >
         ProfeSantiago
       </span>
@@ -32,7 +35,7 @@ const routes = [
 
     <!-- Acciones y menú mobile -->
     <div
-      class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse md:gap-6"
+      class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse md:gap-6 gap-2"
     >
       <ToggleDarkLightMode />
 
@@ -47,7 +50,7 @@ const routes = [
       <button
         data-collapse-toggle="navbar-sticky"
         type="button"
-        class="lg:hidden p-2 w-10 h-10 inline-flex items-center justify-center text-sm text-gray-500 rounded-lg dark:text-white"
+        class="lg:hidden inline-flex items-center justify-center text-sm text-gray-500 rounded-lg dark:text-white"
         aria-controls="navbar-sticky"
         aria-expanded="false"
       >
@@ -60,7 +63,7 @@ const routes = [
     <div class="hidden w-full lg:flex md:w-auto md:order-1" id="navbar-sticky">
       <ul
         id="navbar-list"
-        class="flex flex-col mt-4 p-4 md:py-1 md:px-4 font-medium border rounded-3xl bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent border-gray-100 dark:border-gray-700 rtl:space-x-reverse"
+        class="flex flex-col mt-4 p-4 md:py-1 md:px-6 font-medium border rounded-3xl bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent border-gray-100 dark:border-gray-700 rtl:space-x-reverse"
       >
         {
           routes.map((route) => (
