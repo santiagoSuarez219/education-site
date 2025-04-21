@@ -1,0 +1,31 @@
+---
+import SearchButton from "../../components/categories/SearchButton.astro";
+import Header from "../../components/categories/Header.astro";
+import TabBar from "../../components/categories/TabBar.astro";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  return [
+    { params: { name: "math" } },
+    // ...
+  ];
+}
+---
+
+<Layout>
+  <main class="flex flex-col items-center justify-center min-h-screen">
+    <Header />
+    <SearchButton />
+    <h2
+      class="text-4xl font-extrabold dark:text-white text-gray-900 text-center tracking-tight mt-8 lg:mt-32"
+    >
+      Ruta de aprendizaje
+    </h2>
+    <p class="my-4 text-lg text-gray-500 text-center max-w-3xl px-4 md:px-0">
+      Sigue este roadmap para dominar las matemáticas de manera estructurada y
+      efectiva. Cada paso te llevará a un nivel más alto de comprensión y
+      habilidad. ¡Comienza tu viaje hoy mismo!
+    </p>
+    <TabBar />
+  </main>
+</Layout>
